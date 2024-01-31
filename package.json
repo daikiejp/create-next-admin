@@ -1,0 +1,32 @@
+{
+  "name": "create-nextadmin",
+  "version": "1.0.0",
+  "description": "NextJS Admin Dashboard ready to use",
+  "main": "dist/installer.js",
+  "bin": {
+    "create-nextadmin": "./dist/installer.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/installer.ts"
+  },
+  "keywords": [
+    "nextjs",
+    "installer",
+    "typescript",
+    "dashboard"
+  ],
+  "author": "Danny Davila",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.9.1",
+    "@types/prompts": "^2.4.9",
+    "child_process": "^1.0.2",
+    "prompts": "^2.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
