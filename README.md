@@ -5,7 +5,7 @@ An installer that uses NextJS as a framework, next-intl for internationalization
 ## Usage
 
 ```
-npm create-nextadmin@latest
+npx create-next-admin@latest
 ```
 
 ## Dependencies
@@ -32,3 +32,7 @@ npm create-nextadmin@latest
 ## Author
 
 Danny Davila (@daikiejp)
+
+## License
+
+MIT License. Read more at LICENSE.md
