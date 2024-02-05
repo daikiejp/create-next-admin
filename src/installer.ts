@@ -2,7 +2,7 @@
 
 import prompts from 'prompts';
 import { execSync } from 'node:child_process';
-import { existsSync } from 'fs';
+import { existsSync, renameSync, appendFileSync } from 'fs';
 import path from 'path';
 
 async function main() {
@@ -36,38 +36,73 @@ async function main() {
     },
   ]);
 
-  const { projectName, packageManager } = answers;
+  const {
+    projectName,
+    packageManager,
+  }: { projectName: string; packageManager: 'npm' | 'yarn' | 'pnpm' | 'bun' } =
+    answers;
 
   if (!projectName || !packageManager) {
     console.log('\x1b[1m\x1b[31m❌ Operation cancelled.\x1b[0m');
     return;
   }
 
-  // Commands
-  let command = `npx create-next-app@latest ${projectName} `;
-  if (packageManager === 'npm') {
-    command += '--use-npm ';
-  } else if (packageManager === 'yarn') {
-    command += '--use-yarn ';
-  } else if (packageManager === 'pnpm') {
-    command += '--use-pnpm ';
-  } else if (packageManager === 'bun') {
-    command += '--use-bun ';
-  }
-  command += '--typescript ';
-  command += '--eslint ';
-  command += '--tailwind ';
-  command += '--no-src-dir ';
-  command += '--app ';
-  command += '--turbopack ';
-  command += '--import-alias "@/*" ';
+  const executors = {
+    npm: 'npx',
+    yarn: 'yarn dlx',
+    pnpm: 'pnpm dlx',
+    bun: 'bunx',
+  };
 
   try {
     console.log('📂 Creating the project...');
-    execSync(command, { stdio: 'inherit' });
+    // Next Admin Dashboard Repo
+    const repoUrl = 'https://github.com/daikiejp/nextadmin-intl-theme-auth';
+    execSync(`git clone --depth 1 ${repoUrl} ${projectName}`, {
+      stdio: 'inherit',
+    });
 
+    // Install Dependencies
     console.log(`📦 Installing dependencies with ${packageManager}...`);
     execSync(`${packageManager} install`, {
+      stdio: 'inherit',
+      cwd: projectName,
+    });
+
+    // Generate Auth Secret
+    console.log('🔐 Generating Auth Secret...');
+    execSync(`${executors[packageManager]} auth secret`, {
+      stdio: 'inherit',
+      cwd: projectName,
+    });
+
+    const envLocalPath = path.join(projectName, '.env.local');
+    const envPath = path.join(projectName, '.env');
+
+    if (existsSync(envLocalPath)) {
+      console.log('🔄 Renaming .env.local to .env...');
+      renameSync(envLocalPath, envPath);
+    }
+
+    // Add DATABASE_URL to .env
+    const envFilePath = path.join(projectName, '.env');
+    const databaseUrl = 'DATABASE_URL="file:./dev.db"';
+
+    if (existsSync(envFilePath)) {
+      console.log('🔄 Adding DATABASE_URL to .env...');
+      appendFileSync(envFilePath, `\n${databaseUrl}`, 'utf8');
+    }
+
+    // Prisma Generate
+    console.log('⚡ Running Prisma generate...');
+    execSync(`${executors[packageManager]} prisma generate`, {
+      stdio: 'inherit',
+      cwd: projectName,
+    });
+
+    // Prisma DB Push
+    console.log('🚀 Running Prisma push...');
+    execSync(`${executors[packageManager]} prisma db push`, {
       stdio: 'inherit',
       cwd: projectName,
     });
