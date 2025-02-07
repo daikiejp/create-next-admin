@@ -1,5 +1,7 @@
 # Create Next Admin
 
+> DON'T USE THIS FOR PRODUCTION DUE TO CRITICAL SECURITY VULNERABILITIES. [SEE MORE](https://github.com/vercel/next.js/security/advisories/GHSA-f82v-jwr5-mffw)
+
 [![Version](https://img.shields.io/npm/v/create-next-admin.svg)](https://www.npmjs.com/package/create-next-admin)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](#)
 [![Twitter: daikiejp](https://img.shields.io/twitter/follow/daikiejp.svg?style=social)](https://twitter.com/daikiejp)
@@ -8,8 +10,40 @@ A Next Admin Dashboard installer that uses NextJS as a framework, next-intl for 
 
 ## Usage
 
-```
+npx
+
+```bash
 npx create-next-admin@latest
+```
+
+pnpm
+
+```bash
+pnpx dlx create-next-admin@latest
+```
+
+yarn
+
+```bash
+yarn dlx create next-admin@latest
+```
+
+bun
+
+```bash
+bunx create next-admin@latest
+```
+
+or non-interactive mode:
+
+```bash
+npx create-next-admin@latest --name mydashboard --package npm
+```
+
+or
+
+```bash
+npx create-next-admin@latest -n mydashboard -p npm
 ```
 
 Then, `Go to Dashboard` and register a new user.
@@ -50,12 +84,12 @@ The admin section is under: `/admin` and is currently on development.
 2. Create a better Admin Area
 3. Support internationalization for zod validations
 4. Create a dynamic Breadcrumb using the url as path
-5. Support install offline mode
-6. Support non-interactive commands
+   ~~5. Support install offline mode~~
+   ~~6. Support non-interactive commands~~
 
 ## Status
 
-Unstable version. This project is for development use only.
+Stable version 15.1.0
 
 ## Author
 

@@ -1,6 +1,6 @@
 {
   "name": "create-next-admin",
-  "version": "0.2.0",
+  "version": "15.1.0",
   "description": "NextJS Admin Dashboard ready to use",
   "main": "dist/installer.js",
   "bin": {
@@ -32,10 +32,5 @@
     "child_process": "^1.0.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.6.3"
-  },
-  "overrides": {
-    "react-hook-form": {
-      "react": "19.0.0-rc-66855b96-20241106"
-    }
   }
 }
