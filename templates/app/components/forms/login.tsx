@@ -61,7 +61,7 @@ const FormLogin = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 relative">
+    <div className="min-h-screen flex items-center justify-center relative">
       <Card className="w-full max-w-md">
         <CardHeader>
           <CardTitle>{t('Login.title')}</CardTitle>
