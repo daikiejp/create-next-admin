@@ -4,7 +4,7 @@ import prompts from 'prompts';
 import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { execSync } from 'node:child_process';
-import { existsSync, renameSync, appendFileSync } from 'fs';
+import { existsSync, renameSync, appendFileSync, cpSync } from 'fs';
 import path from 'path';
 
 interface CliOptions {
@@ -14,6 +14,9 @@ interface CliOptions {
 
 async function main() {
   console.log('🚀 Welcome to Admin Dashboard with NextJS (NextAdmin) ✨');
+
+    const scriptDir = __dirname;
+    const templatePath = path.join(scriptDir, '..', 'templates', 'app');
 
   const argv = yargs(hideBin(process.argv))
     .options({
@@ -103,18 +106,39 @@ async function main() {
 
   try {
     console.log(`📂 Creating project: ${projectName}...`);
-    // Next Admin Dashboard Repo
-    const repoUrl = 'https://github.com/daikiejp/nextadmin-intl-theme-auth';
-    execSync(`git clone --depth 1 ${repoUrl} ${projectName}`, {
-      stdio: 'inherit',
+     if (!existsSync(templatePath)) {
+      console.error(`\x1b[1m\x1b[31m❌ Error: Template directory not found at ${templatePath}\x1b[0m`);
+      process.exit(1);
+    }   
+
+    cpSync(templatePath, projectName, { 
+      recursive: true, 
+      force: false,
+      preserveTimestamps: true
     });
+    console.log('✅ Template files copied successfully!');
+
 
     // Install Dependencies
     console.log(`📦 Installing dependencies with ${packageManager}...`);
-    execSync(`${packageManager} install`, {
-      stdio: 'inherit',
-      cwd: projectName,
-    });
+    if (packageManager === 'pnpm') {
+      const allowBuilds = [
+        '@prisma/client@5.22.0',
+        'prisma@5.22.0',
+        'sharp',
+        'unrs-resolver',
+      ];
+      const flags = allowBuilds.map(pkg => `${pkg} --allow-build=${pkg}`).join(' ');
+      execSync(`pnpm install ${flags}`, {
+        stdio: 'inherit',
+        cwd: projectName,
+      });
+    } else {
+      execSync(`${packageManager} install`, {
+        stdio: 'inherit',
+        cwd: projectName,
+      })
+    };
 
     // Generate Auth Secret
     console.log('🔐 Generating Auth Secret...');
@@ -142,7 +166,7 @@ async function main() {
 
     // Prisma Generate
     console.log('⚡ Running Prisma generate...');
-    execSync(`${executors[packageManager]} prisma generate`, {
+    execSync(`${executors[packageManager]} prisma@5.22.0 generate`, {
       stdio: 'inherit',
       cwd: projectName,
     });

@@ -1,0 +1,43 @@
+{
+  "Errors": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Email is invalid",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 6 characters long",
+    "passwordMaxLength": "Password must be at most 20 characters long"
+  },
+  "Auth": {
+    "Login": {
+      "title": "ログイン",
+      "description": "アカウントにアクセスするには認証情報を入力してください"
+    },
+    "Register": {
+      "title": "登録",
+      "description": "アカウントにアクセスするには認証情報を入力してください"
+    },
+    "name": "お名前",
+    "namePlaceholder": "お名前を入力",
+    "loginDescription": "アカウントにアクセスするには認証情報を入力してください",
+    "email": "メールアドレス",
+    "emailPlaceholder": "メールアドレスを入力",
+    "password": "パスワード",
+    "passwordPlaceholder": "パスワードを入力",
+    "signIn": "サインイン",
+    "signingIn": "サインイン...",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "signUp": "新規登録",
+    "signingUp": "新規登録...",
+    "logOut": "ログアウト"
+  },
+  "HomePage": {
+    "title": "ハロー・ワールド",
+    "desc1": "このファイルを編集して始めよう：",
+    "desc2": "保存して、変更内容をすぐに確認できます。",
+    "gotoDashboard": "ダッシュボードへ",
+    "deployNow": "今すぐデプロイ",
+    "readDocs": "ドキュメントを読む",
+    "learn": "学ぶ",
+    "examples": "例",
+    "gotoNextjs": "nextjs.orgへ"
+  }
+}

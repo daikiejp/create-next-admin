@@ -1,0 +1,42 @@
+{
+  "Errors": {
+    "emailRequired": "Email is required",
+    "emailInvalid": "Email is invalid",
+    "passwordRequired": "Password is required",
+    "passwordMinLength": "Password must be at least 6 characters long",
+    "passwordMaxLength": "Password must be at most 20 characters long"
+  },
+  "Auth": {
+    "Login": {
+      "title": "Iniciar sesión",
+      "description": "Ingrese sus credenciales para acceder a su cuenta"
+    },
+    "Register": {
+      "title": "Registrarse",
+      "description": "Ingrese sus credenciales para acceder a su cuenta"
+    },
+    "name": "Nombre",
+    "namePlaceholder": "Ingrese su nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "Ingrese su correo electrónico",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "signIn": "Ingresar",
+    "signingIn": "Ingresando...",
+    "forgotPassword": "¿Olvidó su contraseña?",
+    "signUp": "Registrarse",
+    "signingUp": "Registrando...",
+    "logOut": "Salir"
+  },
+  "HomePage": {
+    "title": "¡Hola Mundo!",
+    "desc1": "Empieza a editar",
+    "desc2": "Guarde y vea sus cambios al instante.",
+    "gotoDashboard": "Ir al panel de control",
+    "deployNow": "Despliegue ahora",
+    "readDocs": "Lea nuestra documentación",
+    "learn": "Aprenda",
+    "examples": "Ejemplos",
+    "gotoNextjs": "Ir a nextjs.org"
+  }
+}
