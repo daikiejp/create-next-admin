@@ -180,7 +180,7 @@ async function main() {
 
     // Prisma DB Push
     console.log('🚀 Running Prisma push...');
-    execSync(`${executors[packageManager]} prisma db push`, {
+    execSync(`${executors[packageManager]} prisma@5.22.0 db push`, {
       stdio: 'inherit',
       cwd: projectName,
     });
