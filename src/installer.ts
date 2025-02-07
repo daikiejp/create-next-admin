@@ -5,6 +5,7 @@ import yargs from 'yargs';
 import { hideBin } from 'yargs/helpers';
 import { execSync } from 'node:child_process';
 import { existsSync, renameSync, appendFileSync, cpSync } from 'fs';
+import fs from 'fs';
 import path from 'path';
 
 interface CliOptions {
@@ -118,6 +119,12 @@ async function main() {
     });
     console.log('✅ Template files copied successfully!');
 
+    // Package.json's name
+    const packageJsonPath = path.join(projectName, 'package.json');
+    const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
+    packageJson.name = projectName;
+    fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+    //console.log('✅ Package.json name updated successfully!');
 
     // Install Dependencies
     console.log(`📦 Installing dependencies with ${packageManager}...`);
