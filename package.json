@@ -7,7 +7,7 @@
     "create-next-admin": "./dist/installer.js"
   },
   "files": [
-    "dist"
+    "dist", "templates"
   ],
   "scripts": {
     "build": "tsc",
