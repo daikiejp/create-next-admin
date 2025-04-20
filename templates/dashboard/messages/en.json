@@ -1,0 +1,178 @@
+{
+  "Auth": {
+    "Errors": {
+      "userExists": "User already exists",
+      "invalidCredentials": "Invalid Credentials",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email is invalid",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 6 characters long",
+      "passwordMaxLength": "Password must be at most 20 characters long",
+      "nameRequired": "Name is required",
+      "nameMinLength": "Name must be at least 3 characters long",
+      "nameMaxLength": "Name must be at most 32 characters long"
+    },
+    "Login": {
+      "title": "Login",
+      "description": "Enter your credentials to access your account"
+    },
+    "Register": {
+      "title": "Register",
+      "description": "Enter your credentials to access your account"
+    },
+    "gotoHomePage": "Go to HomePage",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "signIn": "Sign In",
+    "signingIn": "Signing in...",
+    "forgotPassword": "Forgot password?",
+    "signUp": "Sign up",
+    "signingUp": "Signing up...",
+    "logOut": "Log out"
+  },
+  "HomePage": {
+    "title": "Hello world!",
+    "desc1": "Get started by editing",
+    "desc2": "Save and see your changes instantly.",
+    "gotoDashboard": "Go to Dashboard",
+    "deployNow": "Deploy now",
+    "readDocs": "Read our docs",
+    "learn": "Learn",
+    "examples": "Examples",
+    "gotoNextjs": "Go to nextjs.org"
+  },
+  "Dashboard": {
+    "Sidebar": {
+      "create": "Quick Create",
+      "Menu": {
+        "dashboard": "Dashboard",
+        "lifecycle": "Lifecycle",
+        "analytics": "Analytics",
+        "projects": "Projects",
+        "team": "Team"
+      },
+      "Documents": {
+        "title": "Documents",
+        "library": "Data Library",
+        "reports": "Reports",
+        "wordassistant": "Word Assistant",
+        "more": "More",
+        "open": "Open",
+        "share": "Share"
+      },
+      "Options": {
+        "settings": "Settings",
+        "help": "Get Help",
+        "search": "Search"
+      },
+      "User": {
+        "account": "Account",
+        "billing": "Billing",
+        "notifications": "Notifications",
+        "logout": "Log out"
+      }
+    },
+    "title": "Documents",
+    "Cards": {
+      "revenue": {
+        "title": "Total Revenue",
+        "desc": "Trending up this month",
+        "footer": "Visitors for the last 6 months"
+      },
+      "customers": {
+        "title": "New Customers",
+        "desc": "Down 20% this period",
+        "footer": "Acquisition needs attention"
+      },
+      "accounts": {
+        "title": "Active Accounts",
+        "desc": "Strong user retention",
+        "footer": "Engagement exceed targets"
+      },
+      "growth": {
+        "title": "Growth Rate",
+        "desc": "Steady performance",
+        "footer": "Meets growth projections"
+      }
+    },
+    "Charts": {
+      "totalvisitors": "Total Visitors",
+      "totaldesc": "Total for the last 3 months",
+      "last3months": "Last 3 months",
+      "last30days": "Last 30 days",
+      "last7days": "Last 7 days",
+      "visitors": "Visitors",
+      "desktop": "Desktop",
+      "mobile": "Mobile"
+    },
+    "Table": {
+      "Tabs": {
+        "outline": "Outline",
+        "pastper": "Past Performance",
+        "keyper": "Key Personnel",
+        "focusdoc": "Focus Documents"
+      },
+      "Actions": {
+        "custcolumns": "Customize columns",
+        "columns": "Columns",
+        "addsection": "Add Section"
+      },
+      "Header": {
+        "header": "Header",
+        "type": "Section Type",
+        "status": "Status",
+        "target": "Target",
+        "limit": "Limit",
+        "reviewer": "Reviewer"
+      },
+      "Item": {
+        "Details": {
+          "desc": "Showing total visitors for the last 6 months",
+          "desc2": "Trending up by 5.2% this month",
+          "desc3": "Showing total visitors for the last 6 months. This is just some random text to test the layout. It spans multiple lines and should wrap around.",
+          "submit": "Submit",
+          "done": "Done"
+        },
+        "Month": {
+          "jan": "January",
+          "feb": "February",
+          "mar": "March",
+          "apr": "April",
+          "may": "May",
+          "jun": "June"
+        },
+        "Device": {
+          "desktop": "Desktop",
+          "mobile": "Mobile"
+        },
+        "Status": {
+          "done": "Done",
+          "inprocess": "In Process",
+          "notstarted": "Not Started"
+        },
+        "Reviewer": {
+          "assign": "Assign reviewer"
+        },
+        "Actions": {
+          "edit": "Edit",
+          "copy": "Make a copy",
+          "favorite": "Favorite",
+          "delete": "Delete"
+        }
+      },
+      "Footer": {
+        "Rows": {
+          "selected": "{rowSelected} of {rowTotal} row(s) selected",
+          "page": "Rows per page"
+        },
+        "Page": {
+          "selected": "Page {pageSelected} of {pageTotal}"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "Auth": {
+    "Errors": {
+      "userExists": "El usuario ya existe",
+      "invalidCredentials": "Credenciales inválidas",
+      "emailRequired": "El correo electrónico es obligatorio",
+      "emailInvalid": "El correo electrónico no es válido",
+      "passwordRequired": "La contraseña es obligatoria",
+      "passwordMinLength": "La contraseña debe tener al menos 6 caracteres",
+      "passwordMaxLength": "La contraseña debe tener como máximo 20 caracteres",
+      "nameRequired": "El nombre es obligatorio",
+      "nameMinLength": "El nombre debe tener al menos 3 caracteres",
+      "nameMaxLength": "El nombre debe tener como máximo 32 caracteres"
+    },
+    "Login": {
+      "title": "Iniciar sesión",
+      "description": "Ingrese sus credenciales para acceder a su cuenta"
+    },
+    "Register": {
+      "title": "Registrarse",
+      "description": "Ingrese sus credenciales para acceder a su cuenta"
+    },
+    "gotoHomePage": "Ir a la página de inicio",
+    "name": "Nombre",
+    "namePlaceholder": "Ingrese su nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "Ingrese su correo electrónico",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "signIn": "Ingresar",
+    "signingIn": "Ingresando...",
+    "forgotPassword": "¿Olvidó su contraseña?",
+    "signUp": "Registrarse",
+    "signingUp": "Registrando...",
+    "logOut": "Salir"
+  },
+  "HomePage": {
+    "title": "¡Hola Mundo!",
+    "desc1": "Empieza a editar",
+    "desc2": "Guarde y vea sus cambios al instante.",
+    "gotoDashboard": "Ir al panel de control",
+    "deployNow": "Despliegue ahora",
+    "readDocs": "Documentación",
+    "learn": "Aprenda",
+    "examples": "Ejemplos",
+    "gotoNextjs": "Ir a nextjs.org"
+  },
+  "Dashboard": {
+    "title": "¡Bienvenido al Tablero!"
+  }
+}

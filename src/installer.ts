@@ -11,13 +11,14 @@ import path from "path";
 interface CliOptions {
   name?: string;
   package?: "npm" | "yarn" | "pnpm" | "bun";
+  withTemplate?: boolean;
 }
 
 async function main() {
   console.log("🚀 Welcome to Admin Dashboard with NextJS (NextAdmin) ✨");
 
   const scriptDir = __dirname;
-  const templatePath = path.join(scriptDir, "..", "templates", "app");
+  const templatePath = path.join(scriptDir, "..", "templates", "base");
 
   const argv = yargs(hideBin(process.argv))
     .options({
@@ -31,6 +32,11 @@ async function main() {
         describe: "Package manager to use (npm, yarn, pnpm, or bun)",
         choices: ["npm", "yarn", "pnpm", "bun"],
         alias: "p",
+      },
+      withTemplate: {
+        type: "boolean",
+        describe: "Include the dashboard template",
+        default: false,
       },
       help: {
         alias: "h",
@@ -52,6 +58,7 @@ async function main() {
 
   let projectName = argv.name;
   let packageManager = argv.package;
+  let withTemplate = argv.withTemplate;
 
   const needProjectName = !projectName;
   const needPackageManager = !packageManager;
@@ -131,6 +138,29 @@ async function main() {
     });
     console.log("✅ Template files copied successfully!");
 
+    if (argv.withTemplate) {
+      const dashboardTemplatePath = path.join(
+        scriptDir,
+        "..",
+        "templates",
+        "dashboard",
+      );
+
+      if (!existsSync(dashboardTemplatePath)) {
+        console.error(
+          `\x1b[1m\x1b[31m❌ Error: Dashboard template directory not found at ${dashboardTemplatePath}\x1b[0m`,
+        );
+        process.exit(1);
+      }
+
+      console.log("📦 Adding dashboard template...");
+      cpSync(dashboardTemplatePath, projectName, {
+        recursive: true,
+        force: true,
+        preserveTimestamps: true,
+      });
+      console.log("✅ Dashboard template added!");
+    }
     // Package.json's name
     const packageJsonPath = path.join(projectName, "package.json");
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
@@ -142,8 +172,8 @@ async function main() {
     console.log(`📦 Installing dependencies with ${packageManager}...`);
     if (packageManager === "pnpm") {
       const allowBuilds = [
-        "@prisma/client@5.22.0",
-        "prisma@5.22.0",
+        "@prisma/client",
+        "prisma",
         "sharp",
         "unrs-resolver",
       ];
@@ -187,14 +217,14 @@ async function main() {
 
     // Prisma Generate
     console.log("⚡ Running Prisma generate...");
-    execSync(`${executors[packageManager]} prisma@5.22.0 generate`, {
+    execSync(`${executors[packageManager]} prisma generate`, {
       stdio: "inherit",
       cwd: projectName,
     });
 
     // Prisma DB Push
     console.log("🚀 Running Prisma push...");
-    execSync(`${executors[packageManager]} prisma@5.22.0 db push`, {
+    execSync(`${executors[packageManager]} prisma db push`, {
       stdio: "inherit",
       cwd: projectName,
     });

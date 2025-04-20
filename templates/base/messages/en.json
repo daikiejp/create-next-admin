@@ -1,0 +1,51 @@
+{
+  "Auth": {
+    "Errors": {
+      "userExists": "User already exists",
+      "invalidCredentials": "Invalid Credentials",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email is invalid",
+      "passwordRequired": "Password is required",
+      "passwordMinLength": "Password must be at least 6 characters long",
+      "passwordMaxLength": "Password must be at most 20 characters long",
+      "nameRequired": "Name is required",
+      "nameMinLength": "Name must be at least 3 characters long",
+      "nameMaxLength": "Name must be at most 32 characters long"
+    },
+    "Login": {
+      "title": "Login",
+      "description": "Enter your credentials to access your account"
+    },
+    "Register": {
+      "title": "Register",
+      "description": "Enter your credentials to access your account"
+    },
+    "gotoHomePage": "Go to HomePage",
+    "name": "Name",
+    "namePlaceholder": "Enter your name",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "signIn": "Sign In",
+    "signingIn": "Signing in...",
+    "forgotPassword": "Forgot password?",
+    "signUp": "Sign up",
+    "signingUp": "Signing up...",
+    "logOut": "Log out"
+  },
+  "HomePage": {
+    "title": "Hello world!",
+    "desc1": "Get started by editing",
+    "desc2": "Save and see your changes instantly.",
+    "gotoDashboard": "Go to Dashboard",
+    "deployNow": "Deploy now",
+    "readDocs": "Read our docs",
+    "learn": "Learn",
+    "examples": "Examples",
+    "gotoNextjs": "Go to nextjs.org"
+  },
+  "Dashboard": {
+    "title": "Welcome to the Dashboard!"
+  }
+}

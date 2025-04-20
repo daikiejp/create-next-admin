@@ -1,0 +1,178 @@
+{
+  "Auth": {
+    "Errors": {
+      "userExists": "El usuario ya existe",
+      "invalidCredentials": "Credenciales inválidas",
+      "emailRequired": "El correo electrónico es obligatorio",
+      "emailInvalid": "El correo electrónico no es válido",
+      "passwordRequired": "La contraseña es obligatoria",
+      "passwordMinLength": "La contraseña debe tener al menos 6 caracteres",
+      "passwordMaxLength": "La contraseña debe tener como máximo 20 caracteres",
+      "nameRequired": "El nombre es obligatorio",
+      "nameMinLength": "El nombre debe tener al menos 3 caracteres",
+      "nameMaxLength": "El nombre debe tener como máximo 32 caracteres"
+    },
+    "Login": {
+      "title": "Iniciar sesión",
+      "description": "Ingrese sus credenciales para acceder a su cuenta"
+    },
+    "Register": {
+      "title": "Registrarse",
+      "description": "Ingrese sus credenciales para acceder a su cuenta"
+    },
+    "gotoHomePage": "Ir a la página de inicio",
+    "name": "Nombre",
+    "namePlaceholder": "Ingrese su nombre",
+    "email": "Correo electrónico",
+    "emailPlaceholder": "Ingrese su correo electrónico",
+    "password": "Contraseña",
+    "passwordPlaceholder": "Ingrese su contraseña",
+    "signIn": "Ingresar",
+    "signingIn": "Ingresando...",
+    "forgotPassword": "¿Olvidó su contraseña?",
+    "signUp": "Registrarse",
+    "signingUp": "Registrando...",
+    "logOut": "Salir"
+  },
+  "HomePage": {
+    "title": "¡Hola Mundo!",
+    "desc1": "Empieza a editar",
+    "desc2": "Guarde y vea sus cambios al instante.",
+    "gotoDashboard": "Ir al panel de control",
+    "deployNow": "Despliegue ahora",
+    "readDocs": "Documentación",
+    "learn": "Aprenda",
+    "examples": "Ejemplos",
+    "gotoNextjs": "Ir a nextjs.org"
+  },
+  "Dashboard": {
+    "Sidebar": {
+      "create": "Creación rápida",
+      "Menu": {
+        "dashboard": "Panel",
+        "lifecycle": "Ciclo de vida",
+        "analytics": "Analítica",
+        "projects": "Proyectos",
+        "team": "Equipo"
+      },
+      "Documents": {
+        "title": "Documentos",
+        "library": "Biblioteca de Datos",
+        "reports": "Informes",
+        "wordassistant": "Asistente de Escritura",
+        "more": "Más",
+        "open": "Abrir",
+        "share": "Compartir"
+      },
+      "Options": {
+        "settings": "Configuración",
+        "help": "Obtener ayuda",
+        "search": "Buscar"
+      },
+      "User": {
+        "account": "Cuenta",
+        "billing": "Facturación",
+        "notifications": "Notificaciones",
+        "logout": "Cerrar sesión"
+      }
+    },
+    "title": "Documentos",
+    "Cards": {
+      "revenue": {
+        "title": "Ingresos Totales",
+        "desc": "Tendencia al alza este mes",
+        "footer": "Visitantes en los últimos 6 meses"
+      },
+      "customers": {
+        "title": "Nuevos Clientes",
+        "desc": "20% menos en este período",
+        "footer": "La adquisición necesita atención"
+      },
+      "accounts": {
+        "title": "Cuentas Activas",
+        "desc": "Alta retención de usuarios",
+        "footer": "La participación supera los objetivos"
+      },
+      "growth": {
+        "title": "Tasa de Crecimiento",
+        "desc": "Desempeño constante",
+        "footer": "Cumple proyecciones de crecimiento"
+      }
+    },
+    "Charts": {
+      "totalvisitors": "Visitantes Totales",
+      "totaldesc": "Total de los últimos 3 meses",
+      "last3months": "Últimos 3 meses",
+      "last30days": "Últimos 30 días",
+      "last7days": "Últimos 7 días",
+      "visitors": "Visitantes",
+      "desktop": "Escritorio",
+      "mobile": "Móvil"
+    },
+    "Table": {
+      "Tabs": {
+        "outline": "Resumen",
+        "pastper": "Rendimiento Pasado",
+        "keyper": "Personal Clave",
+        "focusdoc": "Documentos Destacados"
+      },
+      "Actions": {
+        "custcolumns": "Personalizar columnas",
+        "columns": "Columnas",
+        "addsection": "Agregar Sección"
+      },
+      "Header": {
+        "header": "Encabezado",
+        "type": "Tipo de Sección",
+        "status": "Estado",
+        "target": "Objetivo",
+        "limit": "Límite",
+        "reviewer": "Revisor"
+      },
+      "Item": {
+        "Details": {
+          "desc": "Mostrando visitantes totales de los últimos 6 meses",
+          "desc2": "Tendencia al alza del 5.2% este mes",
+          "desc3": "Mostrando visitantes totales de los últimos 6 meses. Este es un texto aleatorio para probar el diseño. Ocupa varias líneas y debería ajustarse.",
+          "submit": "Enviar",
+          "done": "Hecho"
+        },
+        "Month": {
+          "jan": "Enero",
+          "feb": "Febrero",
+          "mar": "Marzo",
+          "apr": "Abril",
+          "may": "Mayo",
+          "jun": "Junio"
+        },
+        "Device": {
+          "desktop": "Escritorio",
+          "mobile": "Móvil"
+        },
+        "Status": {
+          "done": "Hecho",
+          "inprocess": "En proceso",
+          "notstarted": "No iniciado"
+        },
+        "Reviewer": {
+          "assign": "Asignar revisor"
+        },
+        "Actions": {
+          "edit": "Editar",
+          "copy": "Copiar",
+          "favorite": "Favorito",
+          "delete": "Eliminar"
+        }
+      },
+      "Footer": {
+        "Rows": {
+          "selected": "{rowSelected} de {rowTotal} fila(s) seleccionadas",
+          "page": "Filas por página"
+        },
+        "Page": {
+          "selected": "Página {pageSelected} de {pageTotal}"
+        }
+      }
+    }
+  }
+}

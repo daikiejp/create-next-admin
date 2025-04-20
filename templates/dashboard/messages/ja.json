@@ -1,0 +1,178 @@
+{
+  "Auth": {
+    "Errors": {
+      "userExists": "ユーザーは既に存在します",
+      "invalidCredentials": "無効な認証情報です",
+      "emailRequired": "メールアドレスは必須です",
+      "emailInvalid": "無効なメールアドレスです",
+      "passwordRequired": "パスワードは必須です",
+      "passwordMinLength": "パスワードは6文字以上である必要があります",
+      "passwordMaxLength": "パスワードは20文字以下である必要があります",
+      "nameRequired": "名前は必須です",
+      "nameMinLength": "名前は3文字以上である必要があります",
+      "nameMaxLength": "名前は32文字以下である必要があります"
+    },
+    "Login": {
+      "title": "ログイン",
+      "description": "アカウントにアクセスするには認証情報を入力してください"
+    },
+    "Register": {
+      "title": "登録",
+      "description": "アカウントにアクセスするには認証情報を入力してください"
+    },
+    "gotoHomePage": "ホームページへ",
+    "name": "お名前",
+    "namePlaceholder": "お名前を入力",
+    "email": "メールアドレス",
+    "emailPlaceholder": "メールアドレスを入力",
+    "password": "パスワード",
+    "passwordPlaceholder": "パスワードを入力",
+    "signIn": "サインイン",
+    "signingIn": "サインイン...",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "signUp": "新規登録",
+    "signingUp": "新規登録...",
+    "logOut": "ログアウト"
+  },
+  "HomePage": {
+    "title": "ハロー・ワールド",
+    "desc1": "このファイルを編集して始めよう：",
+    "desc2": "保存して、変更内容をすぐに確認できます。",
+    "gotoDashboard": "ダッシュボードへ",
+    "deployNow": "今すぐデプロイ",
+    "readDocs": "ドキュメントを読む",
+    "learn": "学ぶ",
+    "examples": "例",
+    "gotoNextjs": "nextjs.orgへ"
+  },
+  "Dashboard": {
+    "Sidebar": {
+      "create": "クイック作成",
+      "Menu": {
+        "dashboard": "ダッシュボード",
+        "lifecycle": "ライフサイクル",
+        "analytics": "分析",
+        "projects": "プロジェクト",
+        "team": "チーム"
+      },
+      "Documents": {
+        "title": "ドキュメント",
+        "library": "データライブラリ",
+        "reports": "レポート",
+        "wordassistant": "ワードアシスタント",
+        "more": "もっと見る",
+        "open": "開く",
+        "share": "共有"
+      },
+      "Options": {
+        "settings": "設定",
+        "help": "ヘルプ",
+        "search": "検索"
+      },
+      "User": {
+        "account": "アカウント",
+        "billing": "請求",
+        "notifications": "通知",
+        "logout": "ログアウト"
+      }
+    },
+    "title": "ドキュメント",
+    "Cards": {
+      "revenue": {
+        "title": "総収益",
+        "desc": "今月は増加傾向です",
+        "footer": "過去6か月間の訪問者数"
+      },
+      "customers": {
+        "title": "新規顧客",
+        "desc": "今期は20％減少",
+        "footer": "獲得に注意が必要です"
+      },
+      "accounts": {
+        "title": "アクティブアカウント",
+        "desc": "高いユーザー定着率",
+        "footer": "エンゲージメントが目標を超えました"
+      },
+      "growth": {
+        "title": "成長率",
+        "desc": "安定したパフォーマンス",
+        "footer": "成長予測を満たしています"
+      }
+    },
+    "Charts": {
+      "totalvisitors": "総訪問者数",
+      "totaldesc": "過去3か月間の合計",
+      "last3months": "過去3か月間",
+      "last30days": "過去30日間",
+      "last7days": "過去7日間",
+      "visitors": "訪問者数",
+      "desktop": "デスクトップ",
+      "mobile": "モバイル"
+    },
+    "Table": {
+      "Tabs": {
+        "outline": "概要",
+        "pastper": "過去のパフォーマンス",
+        "keyper": "主要人物",
+        "focusdoc": "注目ドキュメント"
+      },
+      "Actions": {
+        "custcolumns": "列をカスタマイズ",
+        "columns": "列",
+        "addsection": "セクションを追加"
+      },
+      "Header": {
+        "header": "ヘッダー",
+        "type": "セクションタイプ",
+        "status": "ステータス",
+        "target": "目標",
+        "limit": "制限",
+        "reviewer": "レビュアー"
+      },
+      "Item": {
+        "Details": {
+          "desc": "過去6か月間の総訪問者数を表示",
+          "desc2": "今月は5.2%の増加傾向",
+          "desc3": "過去6か月間の総訪問者数を表示。これはレイアウトテスト用のランダムなテキストです。複数行にわたって折り返す必要があります。",
+          "submit": "送信",
+          "done": "完了"
+        },
+        "Month": {
+          "jan": "1月",
+          "feb": "2月",
+          "mar": "3月",
+          "apr": "4月",
+          "may": "5月",
+          "jun": "6月"
+        },
+        "Device": {
+          "desktop": "デスクトップ",
+          "mobile": "モバイル"
+        },
+        "Status": {
+          "done": "完了",
+          "inprocess": "進行中",
+          "notstarted": "未開始"
+        },
+        "Reviewer": {
+          "assign": "レビュアーを割り当てる"
+        },
+        "Actions": {
+          "edit": "編集",
+          "copy": "コピーを作成",
+          "favorite": "お気に入り",
+          "delete": "削除"
+        }
+      },
+      "Footer": {
+        "Rows": {
+          "selected": "{rowTotal}件中{rowSelected}件を選択中",
+          "page": "1ページあたりの行数"
+        },
+        "Page": {
+          "selected": "{pageTotal}ページ中{pageSelected}ページ目"
+        }
+      }
+    }
+  }
+}

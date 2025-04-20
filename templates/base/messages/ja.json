@@ -1,0 +1,51 @@
+{
+  "Auth": {
+    "Errors": {
+      "userExists": "ユーザーは既に存在します",
+      "invalidCredentials": "無効な認証情報です",
+      "emailRequired": "メールアドレスは必須です",
+      "emailInvalid": "無効なメールアドレスです",
+      "passwordRequired": "パスワードは必須です",
+      "passwordMinLength": "パスワードは6文字以上である必要があります",
+      "passwordMaxLength": "パスワードは20文字以下である必要があります",
+      "nameRequired": "名前は必須です",
+      "nameMinLength": "名前は3文字以上である必要があります",
+      "nameMaxLength": "名前は32文字以下である必要があります"
+    },
+    "Login": {
+      "title": "ログイン",
+      "description": "アカウントにアクセスするには認証情報を入力してください"
+    },
+    "Register": {
+      "title": "登録",
+      "description": "アカウントにアクセスするには認証情報を入力してください"
+    },
+    "gotoHomePage": "ホームページへ",
+    "name": "お名前",
+    "namePlaceholder": "お名前を入力",
+    "email": "メールアドレス",
+    "emailPlaceholder": "メールアドレスを入力",
+    "password": "パスワード",
+    "passwordPlaceholder": "パスワードを入力",
+    "signIn": "サインイン",
+    "signingIn": "サインイン...",
+    "forgotPassword": "パスワードをお忘れですか？",
+    "signUp": "新規登録",
+    "signingUp": "新規登録...",
+    "logOut": "ログアウト"
+  },
+  "HomePage": {
+    "title": "ハロー・ワールド",
+    "desc1": "このファイルを編集して始めよう：",
+    "desc2": "保存して、変更内容をすぐに確認できます。",
+    "gotoDashboard": "ダッシュボードへ",
+    "deployNow": "今すぐデプロイ",
+    "readDocs": "ドキュメントを読む",
+    "learn": "学ぶ",
+    "examples": "例",
+    "gotoNextjs": "nextjs.orgへ"
+  },
+  "Dashboard": {
+    "title": "ダッシュボードへようこそ！"
+  }
+}
