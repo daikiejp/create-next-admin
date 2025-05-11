@@ -1,6 +1,8 @@
 {
   "Auth": {
     "Errors": {
+      "internalError": "Error 500 - Error Interno del Servidor",
+      "invalidData": "Error - Datos No Válidos",
       "userExists": "El usuario ya existe",
       "invalidCredentials": "Credenciales inválidas",
       "emailRequired": "El correo electrónico es obligatorio",

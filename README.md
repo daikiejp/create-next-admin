@@ -20,18 +20,6 @@ pnpm
 pnpx dlx create-next-admin@latest --with-template
 ```
 
-yarn
-
-```bash
-yarn dlx create next-admin@latest --with-template
-```
-
-bun
-
-```bash
-bunx create next-admin@latest --with-template
-```
-
 or non-interactive mode:
 
 ```bash
@@ -102,16 +90,16 @@ Then in Vercel go to your Project Settings > Environment Variables you need have
 # Todo
 
 1. Create a dynamic Breadcrumb using the url as path
-2. Admin section using role Admin
-   ~~2. Create a better Dashboard with example data~~
-   ~~3. Create a better Admin Area~~
-   ~~4. Support internationalization for zod validations~~
-   ~~5. Support install offline mode~~
-   ~~6. Support non-interactive commands~~
+2. Admin section using role Admin  
+~~3. Create a better Dashboard with example data~~  
+~~4. Create a better Admin Area~~  
+~~5. Support internationalization for zod validations~~  
+~~6. Support install offline mode~~  
+~~7. Support non-interactive commands~~  
 
 ## Status
 
-Stable version 15.3.1
+Stable version 15.3.2
 
 ## Author
 

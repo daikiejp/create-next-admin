@@ -22,7 +22,7 @@ export const loginAction = async (values: z.infer<typeof loginSchema>) => {
         error: "Errors.invalidCredentials",
       };
     }
-    return { error: "Error 500" };
+    return { error: "Errors.internalError" };
   }
 };
 
@@ -32,7 +32,7 @@ export const registerAction = async (
   try {
     const { data, success } = registerSchema.safeParse(values);
     if (!success) {
-      return { error: "Invalid data" };
+      return { error: "Errors.invalidData" };
     }
 
     const user = await db.user.findUnique({
@@ -73,6 +73,6 @@ export const registerAction = async (
         error: "Errors.invalidCredentials",
       };
     }
-    return { error: "Error 500" };
+    return { error: "Errors.internalError" };
   }
 };

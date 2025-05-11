@@ -1,6 +1,8 @@
 {
   "Auth": {
-    "Errors": {
+    "Errors": { 
+      "internalError": "エラー 500 - サーバー内部エラー",
+      "invalidData": "エラー - 無効なデータ",
       "userExists": "ユーザーは既に存在します",
       "invalidCredentials": "無効な認証情報です",
       "emailRequired": "メールアドレスは必須です",
@@ -40,7 +42,7 @@
     "desc2": "保存して、変更内容をすぐに確認できます。",
     "gotoDashboard": "ダッシュボードへ",
     "deployNow": "今すぐデプロイ",
-    "readDocs": "ドキュメントを読む",
+    "readDocs": "ドキュメント",
     "learn": "学ぶ",
     "examples": "例",
     "gotoNextjs": "nextjs.orgへ"
