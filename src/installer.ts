@@ -138,6 +138,12 @@ async function main() {
     });
     console.log("✅ Template files copied successfully!");
 
+    const destPath = path.join(process.cwd(), projectName);
+    const gitignorePath = path.join(destPath, "gitignore");
+    if (fs.existsSync(gitignorePath)) {
+      fs.renameSync(gitignorePath, path.join(destPath, ".gitignore"));
+    }
+
     if (argv.withTemplate) {
       const dashboardTemplatePath = path.join(
         scriptDir,
