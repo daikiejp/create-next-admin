@@ -223,14 +223,14 @@ async function main() {
 
     // Prisma Generate
     console.log("⚡ Running Prisma generate...");
-    execSync(`${executors[packageManager]} prisma generate`, {
+    execSync(`${packageManager} prisma generate`, {
       stdio: "inherit",
       cwd: projectName,
     });
 
     // Prisma DB Push
     console.log("🚀 Running Prisma push...");
-    execSync(`${executors[packageManager]} prisma db push`, {
+    execSync(`${packageManager} prisma db push`, {
       stdio: "inherit",
       cwd: projectName,
     });
