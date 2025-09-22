@@ -1,6 +1,6 @@
 {
   "name": "create-next-admin",
-  "version": "15.5.3",
+  "version": "15.5.5",
   "description": "NextJS Admin Dashboard ready to use",
   "main": "dist/installer.js",
   "bin": {
@@ -12,6 +12,7 @@
   ],
   "scripts": {
     "build": "tsc",
+    "publish": "tsc & npm publish",
     "start": "ts-node src/installer.ts",
     "fetch": "ts-node utils/fetch.ts"
   },
