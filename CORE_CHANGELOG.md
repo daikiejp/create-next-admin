@@ -1,5 +1,10 @@
 # CORE CHANGELOG
 
+## 15.5.6 (NextJS 15.5.3)
+
+- Update: README
+- Fix: yarn dlx command for latest version
+
 ## 15.5.5 (NextJS v15.5.3)
 
 - Tested: bun installer and yarn installer | Works OK

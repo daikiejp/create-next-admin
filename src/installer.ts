@@ -129,7 +129,7 @@ async function main() {
     },
     latest: {
       npm: "npx",
-      yarn: "yarn",
+      yarn: "yarn dlx",
       pnpm: "pnpm dlx",
       bun: "bunx --bun",
     },

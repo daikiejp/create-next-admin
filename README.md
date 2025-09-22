@@ -20,6 +20,18 @@ pnpm
 pnpx dlx create-next-admin@latest --with-template
 ```
 
+yarn
+
+```bash
+yarn create next-admin --with-template
+```
+
+bun
+
+```bash
+bunx create-next-admin@latest --with-template
+```
+
 or non-interactive mode:
 
 ```bash
@@ -81,9 +93,11 @@ directUrl = env("DIRECT_URL")
 ```
 
 Then in Vercel go to your Project Settings > Environment Variables you need have **3 environments**:
-   - AUTH_SECRET
-   - DATABASE_URL
-   - DIRECT_URL
+
+- AUTH_SECRET
+- DATABASE_URL
+- DIRECT_URL
+
 4. The Auth Secret you can generate a new one by: `openssl rand -base64 32` or here: `https://generate-secret.vercel.app/32`
 5. The Database Url and Direct Url you can get from your database provider, example: Supabase
 
@@ -91,11 +105,11 @@ Then in Vercel go to your Project Settings > Environment Variables you need have
 
 1. Create a dynamic Breadcrumb using the url as path
 2. Admin section using role Admin  
-~~3. Create a better Dashboard with example data~~  
-~~4. Create a better Admin Area~~  
-~~5. Support internationalization for zod validations~~  
-~~6. Support install offline mode~~  
-~~7. Support non-interactive commands~~  
+   ~~3. Create a better Dashboard with example data~~  
+   ~~4. Create a better Admin Area~~  
+   ~~5. Support internationalization for zod validations~~  
+   ~~6. Support install offline mode~~  
+   ~~7. Support non-interactive commands~~
 
 ## Author
 
