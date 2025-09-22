@@ -69,7 +69,8 @@ async function main() {
         {
           type: needProjectName ? "text" : null,
           name: "projectName",
-          message: "What is your project named? (use '.' for current directory)",
+          message:
+            "What is your project named? (use '.' for current directory)",
           initial: "my-app",
           validate: (input: string) => {
             if (!input.trim()) return "The project name cannot be empty.";
@@ -103,7 +104,10 @@ async function main() {
     projectName = answers.projectName || projectName;
     packageManager = answers.packageManager || packageManager;
   } else {
-    if (projectName !== "." && existsSync(path.resolve(projectName as string))) {
+    if (
+      projectName !== "." &&
+      existsSync(path.resolve(projectName as string))
+    ) {
       console.error(
         `\x1b[1m\x1b[31m❌ Error: A folder named "${projectName}" already exists. Please use a different name.\x1b[0m`,
       );
@@ -117,10 +121,18 @@ async function main() {
   }
 
   const executors = {
-    npm: "npx",
-    yarn: "yarn",
-    pnpm: "pnpm",
-    bun: "bunx",
+    local: {
+      npm: "npx",
+      yarn: "yarn",
+      pnpm: "pnpm",
+      bun: "bun",
+    },
+    latest: {
+      npm: "npx",
+      yarn: "yarn",
+      pnpm: "pnpm dlx",
+      bun: "bunx --bun",
+    },
   };
 
   const isCurrentDirectory = projectName === ".";
@@ -129,7 +141,7 @@ async function main() {
 
   try {
     console.log(`📂 Creating project in: ${displayName}...`);
-    
+
     if (!existsSync(templatePath)) {
       console.error(
         `\x1b[1m\x1b[31m❌ Error: Template directory not found at ${templatePath}\x1b[0m`,
@@ -139,7 +151,9 @@ async function main() {
 
     // Check if current directory is empty when using "."
     if (isCurrentDirectory) {
-      const files = fs.readdirSync(process.cwd()).filter(file => !file.startsWith('.git'));
+      const files = fs
+        .readdirSync(process.cwd())
+        .filter((file) => !file.startsWith(".git"));
       if (files.length > 0) {
         const { proceed } = await prompts({
           type: "confirm",
@@ -147,7 +161,7 @@ async function main() {
           message: "Current directory is not empty. Continue anyway?",
           initial: false,
         });
-        
+
         if (!proceed) {
           console.log("\x1b[1m\x1b[31m❌ Operation cancelled.\x1b[0m");
           return;
@@ -167,7 +181,7 @@ async function main() {
       for (const file of files) {
         const srcPath = path.join(templatePath, file);
         const destPath = path.join(process.cwd(), file);
-        
+
         if (fs.statSync(srcPath).isDirectory()) {
           cpSync(srcPath, destPath, {
             recursive: true,
@@ -184,7 +198,9 @@ async function main() {
     }
     console.log("✅ Template files copied successfully!");
 
-    const destPath = isCurrentDirectory ? process.cwd() : path.join(process.cwd(), projectName);
+    const destPath = isCurrentDirectory
+      ? process.cwd()
+      : path.join(process.cwd(), projectName);
     const gitignorePath = path.join(destPath, "gitignore");
     if (fs.existsSync(gitignorePath)) {
       fs.renameSync(gitignorePath, path.join(destPath, ".gitignore"));
@@ -218,7 +234,7 @@ async function main() {
         for (const file of files) {
           const srcPath = path.join(dashboardTemplatePath, file);
           const destPath = path.join(process.cwd(), file);
-          
+
           if (fs.statSync(srcPath).isDirectory()) {
             cpSync(srcPath, destPath, {
               recursive: true,
@@ -240,14 +256,16 @@ async function main() {
     const packageJsonPath = path.join(destPath, "package.json");
     if (fs.existsSync(packageJsonPath)) {
       const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
-      packageJson.name = isCurrentDirectory ? path.basename(process.cwd()) : projectName;
+      packageJson.name = isCurrentDirectory
+        ? path.basename(process.cwd())
+        : projectName;
       fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
     }
 
     // Install Dependencies
     console.log(`📦 Installing dependencies with ${packageManager}...`);
     const workingDir = isCurrentDirectory ? process.cwd() : projectName;
-    
+
     if (packageManager === "pnpm") {
       const allowBuilds = [
         "@prisma/client",
@@ -271,11 +289,13 @@ async function main() {
 
     // Install shadcn components and additional dependencies when withTemplate is true
     if (withTemplate) {
-      console.log("🎨 Installing shadcn components and additional dependencies...");
-      
+      console.log(
+        "🎨 Installing shadcn components and additional dependencies...",
+      );
+
       const shadcnComponents = [
         "avatar",
-        "badge", 
+        "badge",
         "chart",
         "checkbox",
         "separator",
@@ -287,36 +307,47 @@ async function main() {
         "tabs",
         "toggle-group",
         "toggle",
-        "tooltip"
+        "tooltip",
       ];
 
       const additionalDeps = [
         "@tanstack/react-table",
         "@dnd-kit/core",
-        "@dnd-kit/modifiers", 
+        "@dnd-kit/modifiers",
         "@dnd-kit/sortable",
-        "@dnd-kit/utilities"
+        "@dnd-kit/utilities",
       ];
 
       // Install shadcn components
+
       for (const component of shadcnComponents) {
         console.log(`Installing ${component}...`);
         try {
-          execSync(`${executors[packageManager]} shadcn@latest add ${component} --yes`, {
-            stdio: "inherit",
-            cwd: workingDir,
-          });
+          execSync(
+            `${executors.latest[packageManager]} shadcn@latest add ${component} --yes`,
+            {
+              stdio: "inherit",
+              cwd: workingDir,
+            },
+          );
         } catch (error) {
-          console.warn(`⚠️ Warning: Failed to install shadcn component ${component}`);
+          console.warn(
+            `⚠️ Warning: Failed to install shadcn component ${component}`,
+          );
         }
       }
 
       // Install additional dependencies
       console.log("Installing additional dependencies...");
-      const depsCommand = packageManager === "npm" ? "npm install" : 
-                         packageManager === "yarn" ? "yarn add" :
-                         packageManager === "bun" ? "bun add" : "pnpm add";
-      
+      const depsCommand =
+        packageManager === "npm"
+          ? "npm install"
+          : packageManager === "yarn"
+            ? "yarn add"
+            : packageManager === "bun"
+              ? "bun add"
+              : "pnpm add";
+
       try {
         execSync(`${depsCommand} ${additionalDeps.join(" ")}`, {
           stdio: "inherit",
@@ -324,13 +355,15 @@ async function main() {
         });
         console.log("✅ Additional dependencies installed successfully!");
       } catch (error) {
-        console.warn("⚠️ Warning: Some additional dependencies failed to install");
+        console.warn(
+          "⚠️ Warning: Some additional dependencies failed to install",
+        );
       }
     }
 
     // Generate Auth Secret
     console.log("🔐 Generating Auth Secret...");
-    execSync(`${executors[packageManager]} auth secret`, {
+    execSync(`${executors.latest[packageManager]} auth secret`, {
       stdio: "inherit",
       cwd: workingDir,
     });
@@ -354,20 +387,20 @@ async function main() {
 
     // Prisma Generate
     console.log("⚡ Running Prisma generate...");
-    execSync(`${executors[packageManager]} prisma generate`, {
+    execSync(`${executors.local[packageManager]} prisma generate`, {
       stdio: "inherit",
       cwd: workingDir,
     });
 
     // Prisma DB Push
     console.log("🚀 Running Prisma push...");
-    execSync(`${executors[packageManager]} prisma db push`, {
+    execSync(`${executors.local[packageManager]} prisma db push`, {
       stdio: "inherit",
       cwd: workingDir,
     });
 
     console.log("\x1b[1m\x1b[32m✅ Success!\x1b[0m");
-    
+
     if (isCurrentDirectory) {
       console.log(
         `➡️  Run the command: \x1b[1m\x1b[32m${packageManager} run dev\x1b[0m`,
