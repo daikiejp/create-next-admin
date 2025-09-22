@@ -1,6 +1,6 @@
 {
   "name": "create-next-admin",
-  "version": "15.5.5",
+  "version": "15.5.6",
   "description": "NextJS Admin Dashboard ready to use",
   "main": "dist/installer.js",
   "bin": {
