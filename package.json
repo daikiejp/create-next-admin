@@ -1,13 +1,14 @@
 {
   "name": "create-next-admin",
-  "version": "15.3.2",
+  "version": "15.5.3",
   "description": "NextJS Admin Dashboard ready to use",
   "main": "dist/installer.js",
   "bin": {
     "create-next-admin": "./dist/installer.js"
   },
   "files": [
-    "dist", "templates"
+    "dist",
+    "templates"
   ],
   "scripts": {
     "build": "tsc",

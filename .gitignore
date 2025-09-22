@@ -1,3 +1,10 @@
 dist/
 node_modules/
 *.log
+
+# Ignore from templates
+templates/base/.env
+templates/base/.gitignore
+templates/base/.next
+templates/base/node_modules
+templates/base/prisma/dev.db

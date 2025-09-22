@@ -97,10 +97,6 @@ Then in Vercel go to your Project Settings > Environment Variables you need have
 ~~6. Support install offline mode~~  
 ~~7. Support non-interactive commands~~  
 
-## Status
-
-Stable version 15.3.2
-
 ## Author
 
 👤 **Danny Davila**
